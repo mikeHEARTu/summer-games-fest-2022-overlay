@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Social media carousel for twitch.tv/aznmike during the 2022 "E3" co-streams">
+	<meta name="keywords" content="twitch, overlay">
+	<meta name="author" content="mikeheartu">
+	<title>video games are awful</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/all.css">
+</head>
+
+<script>
+	var slideIndex = 0;
+
+	function carousel() {
+	var i;
+	var x = document.getElementsByClassName("contentContainer");
+	for (i = 0; i < x.length; i++) {
+	x[i].style.display = "none";
+	}
+	slideIndex++;
+	if (slideIndex > x.length) {slideIndex = 1}
+	x[slideIndex-1].style.display = "flex";
+	setTimeout(carousel, 15000); // Change image every 15 seconds
+	}
+</script>
+
+<body onload="carousel()">
+	<div class="webContainer">
+		<div class="contentContainer contentMichael">
+			<img src="img/cedric-vt-IuJc2qh2TcA-unsplash.jpg" class="profilePicture" height="100">
+			<div class="textContainer">
+				<span class="textHeader">Mike</span>
+				<span class="textSubtitle"><i class="fab fa-twitter textIcon"></i>mikeHEARTu</span>
+			</div>
+		</div>
+
+		<div class="contentContainer contentNelson">
+			<img src="img/raoul-droog-yMSecCHsIBc-unsplash.jpg" class="profilePicture" height="100">
+			<div class="textContainer">
+				<span class="textHeader">Nelson</span>
+				<span class="textSubtitle"><i class="fab fa-twitter textIcon"></i>Whittico</span>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
